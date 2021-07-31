@@ -3,7 +3,7 @@
 const Home = () => {
 	return (
 		<>
-			<h1>Welcome</h1>
+			<h1>Welcome to Our Tender Management system</h1>
 			{/* <Login /> */}
 		</>
 	);
