@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
@@ -15,7 +15,6 @@ import Dashboard from './pages/dashboard';
 
 function Router() {
 	const { loggedIn } = useContext(AuthContext);
-	const history = useHistory();
 
 	return (
 		<BrowserRouter>
@@ -34,6 +33,7 @@ function Router() {
 						</Route>
 					</>
 				)}
+
 				{loggedIn === true && (
 					<>
 						<Route exact path='/'>
