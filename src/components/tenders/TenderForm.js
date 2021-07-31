@@ -1,6 +1,6 @@
 import axios from 'axios';
-// import DatePicker from 'react-datepicker';
-// import 'react-datepicker/dist/react-datepicker.css';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { useHistory } from 'react-router-dom';
 
 import React, { useState } from 'react';
@@ -13,6 +13,7 @@ function TenderForm({ getTenders }) {
 	const [tenderClosingDate, setTenderClosingDate] = useState('');
 	const [tenderContactDetails, setTenderContactDetails] = useState('');
 	const history = useHistory();
+
 	async function saveTender(e) {
 		e.preventDefault();
 
@@ -25,16 +26,17 @@ function TenderForm({ getTenders }) {
 				tender_closing_date: tenderClosingDate,
 				tender_contact_details: tenderContactDetails,
 			};
+			console.log(tenderData);
+			alert('New Tender Added!');
+			history.push('/tenders');
 			await axios.post('http://localhost:5000/tender/', tenderData);
 			// await axios.post(
-			//   "Server url/customer/",
-			//   customerData
+			//   "Server url/tender/",
+			//   tenderData
 			// );
 			getTenders();
-			alert('New user Added!');
-			history.push('/tenders');
 		} catch (err) {
-			alert('ERROR: New user Not Added!');
+			alert('ERROR: New Tender Not Added!');
 			console.error(err);
 		}
 	}
@@ -67,42 +69,47 @@ function TenderForm({ getTenders }) {
 					}}
 					value={tenderEmployer}
 				/>
-				<input
+
+				{/* ================================  */}
+				<DatePicker
+					selected={tenderMeetingDate}
+					placeholderText='DD-MM-YYYY'
+					onChange={(date) => setTenderMeetingDate(date)}
+					dateFormat='dd/MM/yyyy'
+					minDate={new Date()}
+					value={tenderMeetingDate}
+				/>
+				<DatePicker
+					selected={tenderClosingDate}
+					placeholderText='DD-MM-YYYY'
+					onChange={(date) => setTenderClosingDate(date)}
+					dateFormat='dd/MM/yyyy'
+					minDate={new Date()}
+					value={tenderClosingDate}
+				/>
+
+				{/* ===============================  */}
+
+				{/* <input
 					type='date'
 					placeholder='Tender meeting date'
 					onChange={(e) => {
 						setTenderMeetingDate(e.target.value);
 					}}
 					value={tenderMeetingDate}
-				/>
-				{/* ================================  */}
-				{/* <DatePicker
-					selected={tenderMeetingDate}
-					onSelect={handleDateSelect}
-					onChange={(date) => setTenderMeetingDate(date)}
-					minDate={new Date()}
-					value={tenderMeetingDate}
 				/> */}
-				{/* <DatePicker
-					selected={tenderClosingDate}
-					onSelect={handleDateSelect}
-					placeholder='Tender Clossing date'
-					onChange={(date) => setTenderClosingDate(date)}
-					minDate={new Date()}
-					value={tenderClosingDate}
-				/> */}
-				{/* selected={date}
-  onSelect={handleDateSelect} //when day is clicked
-  onChange={handleDateChange} */}
-				{/* ===============================  */}
-				<input
+
+				{/* <input
 					type='date'
 					placeholder='Tender closing date'
 					onChange={(e) => {
 						setTenderClosingDate(e.target.value);
 					}}
 					value={tenderClosingDate}
-				/>
+				/> */}
+
+				{/* =================================  */}
+
 				<input
 					type='text'
 					placeholder='Tender Contact Details'

@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-const todayDate = new Date();
+// const todayDate = tender_meeting_date;
 
 function TenderList({ tenders }) {
 	function renderTenders() {
@@ -12,22 +12,8 @@ function TenderList({ tenders }) {
 						<h2>{tender.tender_number}</h2>
 						<p> {tender.tender_description}</p>
 						<p> {tender.tender_employer}</p>
-						<p>
-							{
-								(tender.tender_meeting_date = moment(
-									todayDate,
-									'DD-MM-YYY'
-								).format('DD-MMMM-YYYY'))
-							}
-						</p>
-						<p>
-							{
-								(tender.tender_closing_date = moment(
-									todayDate,
-									'DD-MM-YYY'
-								).format('DD-MMMM-YYYY'))
-							}
-						</p>
+						<p>{moment(tender.tender_meeting_date).format('DD-MMMM-YYYY')}</p>
+						<p>{moment(tender.tender_closing_date).format('DD-MM-YYYY')}</p>
 						<p> {tender.tender_contact_details}</p>
 					</li>
 				</>
