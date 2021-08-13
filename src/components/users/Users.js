@@ -7,10 +7,8 @@ function Users() {
 	const [users, setUsers] = useState([]);
 
 	async function getUsers() {
-		const usersRes = await axios.get('http://localhost:5000/auth/');
-		//   const usersRes = await axios.get(
-		//     "Server url/auth/"
-		//   );
+		// const usersRes = await axios.get('http://localhost:5000/auth/');
+		const usersRes = await axios.get('https://tmtbackend.herokuapp.com/auth/');
 		setUsers(usersRes.data);
 	}
 

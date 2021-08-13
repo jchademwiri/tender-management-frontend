@@ -29,11 +29,11 @@ function TenderForm({ getTenders }) {
 			console.log(tenderData);
 			alert('New Tender Added!');
 			history.push('/tenders');
-			await axios.post('http://localhost:5000/tender/', tenderData);
-			// await axios.post(
-			//   "Server url/tender/",
-			//   tenderData
-			// );
+			// await axios.post('http://localhost:5000/tender/', tenderData);
+			await axios.post(
+			  "https://tmtbackend.herokuapp.com/tender/",
+			  tenderData
+			);
 			getTenders();
 		} catch (err) {
 			alert('ERROR: New Tender Not Added!');
