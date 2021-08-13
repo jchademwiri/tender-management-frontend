@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Login from './components/auth/Login';
-import Register from './components/auth/Register';
+import Register from './components/users/Register';
 import Customers from './components/customers/Customers';
 import Navbar from './components/layout/Navbar';
 import TenderForm from './components/tenders/TenderForm';
