@@ -5,10 +5,10 @@ import moment from 'moment';
 
 function TenderList({ tenders }) {
 	function renderTenders() {
-		return tenders.map((tender, tender_number) => {
+		return tenders.map((tender, _id) => {
 			return (
 				<>
-					<li key={tender_number}>
+					<li key={_id}>
 						<h2>{tender.tender_number}</h2>
 						<p> {tender.tender_description}</p>
 						<p> {tender.tender_employer}</p>

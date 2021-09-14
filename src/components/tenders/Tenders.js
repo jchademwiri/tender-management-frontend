@@ -9,7 +9,7 @@ function Tenders() {
 	async function getTenders() {
 		// const tendersRes = await axios.get('http://localhost:5000/tender/');
 		const tendersRes = await axios.get(
-			'https://tmtbackend.herokuapp.com/tender/'
+			'https://newtenders.herokuapp.com/tender/'
 		);
 		setTenders(tendersRes.data);
 	}

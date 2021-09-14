@@ -26,7 +26,7 @@ function Register() {
 			};
 
 			// await axios.post('http://localhost:5000/auth/', registerData);
-			await axios.post('https://tmtbackend.herokuapp.com/auth/', registerData);
+			await axios.post('https://newtenders.herokuapp.com/auth/', registerData);
 			await getLoggedIn();
 			alert('New user Added!');
 			history.push('/users');

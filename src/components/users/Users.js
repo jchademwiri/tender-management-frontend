@@ -8,7 +8,7 @@ function Users() {
 
 	async function getUsers() {
 		// const usersRes = await axios.get('http://localhost:5000/auth/');
-		const usersRes = await axios.get('https://tmtbackend.herokuapp.com/auth/');
+		const usersRes = await axios.get('https://newtenders.herokuapp.com/auth/');
 		setUsers(usersRes.data);
 	}
 

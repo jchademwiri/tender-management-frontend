@@ -9,7 +9,7 @@ function Customers() {
 	async function getCustomers() {
 		// const customersRes = await axios.get('http://localhost:5000/customer/');
 		const customersRes = await axios.get(
-			'https://tmtbackend.herokuapp.com/customer/'
+			'https://newtenders.herokuapp.com/customer/'
 		);
 		setCustomers(customersRes.data);
 	}

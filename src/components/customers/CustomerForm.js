@@ -14,7 +14,7 @@ function CustomerForm({ getCustomers }) {
 			};
 			// await axios.post('http://localhost:5000/customer/', customerData);
 			await axios.post(
-				'https://tmtbackend.herokuapp.com/customer/',
+				'https://newtenders.herokuapp.com/customer/',
 				customerData
 			);
 			getCustomers();
