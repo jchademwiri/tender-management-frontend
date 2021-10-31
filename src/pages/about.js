@@ -1,7 +1,9 @@
 const About = () => {
 	return (
 		<>
-			<h1>About page</h1>
+			<h1>
+				Ba Biya Geomatics & Civils Trading Online Tender Management System
+			</h1>
 		</>
 	);
 };

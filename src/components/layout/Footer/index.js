@@ -1,7 +1,13 @@
+import './footer.css';
 const Footer = () => {
 	return (
 		<>
-			<p>Footer</p>
+			<footer className='main-footer'>
+				<p>
+					Ba Biya Geomatics & Civils Trading Online Tender Management System
+				</p>
+				<small>All Rights Reserved @2021</small>
+			</footer>
 		</>
 	);
 };

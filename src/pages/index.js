@@ -3,7 +3,8 @@
 const Home = () => {
 	return (
 		<>
-			<h1>Welcome to Our Tender Management system</h1>
+			<h1>Welcome to Babiya Geomatics Civils Trading</h1>{' '}
+			<h2>Our Tender Management system</h2>
 			{/* <Login /> */}
 		</>
 	);

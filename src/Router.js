@@ -5,6 +5,7 @@ import Login from './components/auth/Login';
 import Register from './components/users/Register';
 import Customers from './components/customers/Customers';
 import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 import TenderForm from './components/tenders/TenderForm';
 import Tenders from './components/tenders/Tenders';
 import Users from './components/users/Users';
@@ -60,6 +61,7 @@ function Router() {
 					</>
 				)}
 			</Switch>
+			<Footer />
 		</BrowserRouter>
 	);
 }
