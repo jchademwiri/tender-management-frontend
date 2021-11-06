@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './login.scss';
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
@@ -16,7 +17,7 @@ function Login() {
 		try {
 			const loginData = {
 				email,
-				password,
+				password
 			};
 
 			// await axios.post('http://localhost:5000/auth/login', loginData);
@@ -32,23 +33,29 @@ function Login() {
 	}
 
 	return (
-		<div>
-			<h1>Log in to your account</h1>
-			<form onSubmit={login}>
-				<input
-					type='email'
-					placeholder='Email'
-					onChange={(e) => setEmail(e.target.value)}
-					value={email}
-				/>
-				<input
-					type='password'
-					placeholder='Password'
-					onChange={(e) => setPassword(e.target.value)}
-					value={password}
-				/>
-				<button type='submit'>Log in</button>
-			</form>
+		<div className='login_container'>
+			<div className='login_card'>
+				<h1>Log in to your account</h1>
+				<form className='form' onSubmit={login}>
+					<input
+						className='form_input'
+						type='email'
+						placeholder='Email'
+						onChange={(e) => setEmail(e.target.value)}
+						value={email}
+					/>
+					<input
+						className='form_input'
+						type='password'
+						placeholder='Password'
+						onChange={(e) => setPassword(e.target.value)}
+						value={password}
+					/>
+					<button className='form_input' type='submit'>
+						Log in
+					</button>
+				</form>
+			</div>
 		</div>
 	);
 }

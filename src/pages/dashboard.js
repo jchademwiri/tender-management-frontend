@@ -1,16 +1,29 @@
-// import { Link } from 'react-router-dom';
+import '../styles/dashboard.scss';
 
 const Dashboard = () => {
 	return (
 		<>
-			<h1>DashBoard</h1>
-
-			<h3>Open Tenders (11)</h3>
-			<h3>Upcoming Meetings (3)</h3>
-			<h3>Submited Tenders (50)</h3>
-			<h3>August Tenders (7)</h3>
-			<h3>Awarded (2)</h3>
-		
+			<div className='container'>
+				<h1>DashBoard</h1>
+				<div className='card_container'>
+					<div className='container_card openTenders'>
+						<h3>Open Tenders </h3>
+						<p>10</p>
+					</div>
+					<div className='container_card meetings'>
+						<h3>Upcoming Meetings </h3>
+						<p>10</p>
+					</div>
+					<div className='container_card submitted'>
+						<h3>Submited Tenders </h3>
+						<p>10</p>
+					</div>
+					<div className='container_card awarded'>
+						<h3>Awarded </h3>
+						<p>10</p>
+					</div>
+				</div>
+			</div>
 		</>
 	);
 };

@@ -10,7 +10,7 @@ function Navbar() {
 	const { loggedIn } = useContext(AuthContext);
 
 	return (
-		<div>
+		<div className='nav_container'>
 			{loggedIn === false && (
 				<>
 					<Link to='/' className='nav_item'>
